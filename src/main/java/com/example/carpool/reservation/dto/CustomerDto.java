@@ -10,14 +10,12 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
+import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Getter
-@Setter
-@AllArgsConstructor
-@Builder
+@Data
 public class CustomerDto {
 	
 	private Long id;
@@ -28,20 +26,30 @@ public class CustomerDto {
 	
 	private LocalDate birthDate;
 	
-    @Getter
-    @Builder
-    @NoArgsConstructor
-    @AllArgsConstructor
+
     public static class SingleCustomer<T> {
         private T customer;
+
+		public T getCustomer() {
+			return customer;
+		}
+
+		public void setCustomer(T customer) {
+			this.customer = customer;
+		}
     }
     
-    @Getter
-    @Builder
-    @NoArgsConstructor
-    @AllArgsConstructor
+
     public static class MultipleCustomer {
         private List<CustomerDto> customers;
+
+		public List<CustomerDto> getCustomers() {
+			return customers;
+		}
+
+		public void setCustomers(List<CustomerDto> customers) {
+			this.customers = customers;
+		}
     }
 
 }

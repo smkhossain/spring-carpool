@@ -8,7 +8,7 @@ import com.example.carpool.reservation.model.CustomerQueryParam;
 public interface CustomerService {
 	CustomerDto createCustomer(final CustomerDto customer);
 	
-	CustomerDto getCustomer(final CustomerDto customer);
+	CustomerDto getCustomer(final Long id);
 	
 	CustomerDto updateCustomer(final CustomerDto customer);
 	

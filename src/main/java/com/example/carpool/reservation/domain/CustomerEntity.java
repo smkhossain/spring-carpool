@@ -21,13 +21,12 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import model.BaseEntity;
 
-@Entity
-@Table(name="customer")
 @Getter
 @Setter
 @NoArgsConstructor
+@Entity
+@Table(name="customer")
 public class CustomerEntity extends BaseEntity {
-	
 	
 	@Column(name = "first_name")
 	@NotBlank

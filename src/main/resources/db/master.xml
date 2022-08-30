@@ -1,0 +1,52 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.6.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+    <changeSet author="Sharif (generated)" id="1661806749040-1">
+        <createTable tableName="accounts">
+            <column autoIncrement="true" name="user_id" type="INTEGER">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="accounts_pkey"/>
+            </column>
+            <column name="username" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="password" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="email" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_on" type="TIMESTAMP WITHOUT TIME ZONE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_login" type="TIMESTAMP WITHOUT TIME ZONE"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="Sharif (generated)" id="1661806749040-2">
+        <createTable tableName="links">
+            <column autoIncrement="true" name="id" type="INTEGER">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="links_pkey"/>
+            </column>
+            <column name="url" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="description" type="VARCHAR(255)"/>
+            <column name="last_update" type="date"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="Sharif (generated)" id="1661806749040-3">
+        <addUniqueConstraint columnNames="email" constraintName="accounts_email_key" tableName="accounts"/>
+    </changeSet>
+    <changeSet author="Sharif (generated)" id="1661806749040-4">
+        <addUniqueConstraint columnNames="username" constraintName="accounts_username_key" tableName="accounts"/>
+    </changeSet>
+    <changeSet author="Sharif (generated)" id="1661806749040-5">
+        <createTable tableName="test_table">
+            <column name="test_id" type="INTEGER">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="test_table_pkey"/>
+            </column>
+            <column name="test_column" type="VARCHAR"/>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

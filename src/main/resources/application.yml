@@ -7,3 +7,13 @@ spring:
     
     liquibase:
       change-log: classpath:/db/changelog/changelog.sql
+    
+    jpa:
+      generate-ddl: true
+      
+server:
+  error:
+    include-message: always
+    include-binding-errors: always
+    include-stacktrace: on-param
+    include-exception: false
