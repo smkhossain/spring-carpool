@@ -140,8 +140,8 @@
 					<driver>org.postgresql.Driver</driver>
 					<url>jdbc:postgresql://localhost:5432/testdb</url>
 					<defaultSchemaName></defaultSchemaName>
-					<username>postgres</username>
-					<password>iQd6968At5mThhOvvSOq</password>
+					<username>dbuser</username>
+					<password>dbpassword</password>
 					<referenceUrl>hibernate:spring:com.example.carpool?dialect=org.hibernate.dialect.PostgreSQL82Dialect&amp;hibernate.physical_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy&amp;hibernate.implicit_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy</referenceUrl>
 					<verbose>true</verbose>
 					<logging>debug</logging>
