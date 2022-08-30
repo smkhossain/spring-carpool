@@ -1,4 +1,4 @@
-package com.example.carpool.reservation.domain;
+package com.example.carpool.reservation.entity;
 
 public enum Rating {
 	

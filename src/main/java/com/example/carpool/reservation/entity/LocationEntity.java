@@ -1,4 +1,4 @@
-package com.example.carpool.reservation.domain;
+package com.example.carpool.reservation.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -6,15 +6,14 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import lombok.Getter;
 import lombok.Setter;
-
-import model.BaseEntity;
+import util.model.BaseEntity;
 
 
 @Entity
 @Table(name="location")
 @Getter
 @Setter
-public class Location extends BaseEntity {
+public class LocationEntity extends BaseEntity {
 	
 	
 	@Column(name = "address_line1")

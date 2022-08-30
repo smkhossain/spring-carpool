@@ -1,4 +1,4 @@
-package com.example.carpool.reservation.domain;
+package com.example.carpool.reservation.entity;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -17,29 +17,28 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import lombok.Getter;
 import lombok.Setter;
-import model.BaseEntity;
+import util.model.BaseEntity;
 
 @Entity
-@Table(name="driver")
+@Table(name="vehicle")
 @Getter
 @Setter
-public class Driver extends BaseEntity {
-
-	@Column(name = "first_name")
-	@NotBlank
-	private String firstName;
+public class VehicleEntity extends BaseEntity{
 	
-	@Column(name = "last_name")
+	@Column(name = "vehicle_size")
 	@NotBlank
-	private String lastName;
+	private String vehicleSize;
 	
-	@Column(name = "birth_date")
+	@Column(name = "model")
+	@NotBlank
+	private String model;
+	
+	@Column(name = "last_servicing_date")
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
-	private LocalDate birthDate;
-	
+	private LocalDate lastServicingDate;
 	
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-	@JoinColumn(name = "driver_id")
-	private List<Reservation> reservations = new ArrayList<>();
-	
+	@JoinColumn(name = "vehicle_id")
+	private List<ReservationEntity> reservations = new ArrayList<>();
+
 }

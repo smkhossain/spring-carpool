@@ -1,4 +1,4 @@
-package com.example.carpool.reservation.domain;
+package com.example.carpool.reservation.entity;
 
 import java.time.LocalDateTime;
 
@@ -13,13 +13,13 @@ import javax.persistence.Table;
 
 import lombok.Getter;
 import lombok.Setter;
-import model.BaseEntity;
+import util.model.BaseEntity;
 
 @Entity
 @Table(name="reservation")
 @Getter
 @Setter
-public class Reservation extends BaseEntity{
+public class ReservationEntity extends BaseEntity{
 	
     @ManyToOne
     @JoinColumn(name="customer_id", nullable=true)
@@ -27,19 +27,19 @@ public class Reservation extends BaseEntity{
     
     @ManyToOne
     @JoinColumn(name="driver_id", nullable=false)
-    private Driver driver;
+    private DriverEntity driver;
     
     @ManyToOne
     @JoinColumn(name="vehicle_id", nullable=false)
-    private Vehicle vehicle;
+    private VehicleEntity vehicle;
     
     @OneToOne
     @JoinColumn(name="pickup_location_id", nullable=false)
-    private Location pickupLocation;
+    private LocationEntity pickupLocation;
     
     @OneToOne
     @JoinColumn(name="dropoff_location_id", nullable=false)
-    private Location dropoffLocation;
+    private LocationEntity dropoffLocation;
     
     @Column(name="start_time", columnDefinition = "TIMESTAMP" )
     private LocalDateTime startTime;
